@@ -1,0 +1,36 @@
+.container {
+  text-align: center;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+tr:hover {
+  background-color: #f1f1f1 !important;
+  color: black !important;
+}
+
+tr:hover td a {
+  color: black !important;
+}
+
+td a {
+  color: white;
+}
+
+td a:hover {
+  color: inherit;
+}
+
+.selected-row {
+  background-color: #d1e7fd !important;
+  color: black !important;
+}
+
+.selected-row a {
+  color: inherit;
+}

@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TableComponent } from './shared/components/table/table.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  template: `<app-table></app-table>`,
+  imports: [TableComponent],
 })
-export class AppComponent {
-  title = 'git-repos';
-}
+export class AppComponent {}
