@@ -1,59 +1,100 @@
-# GitRepos
+# GitHub Repositories Viewer
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+## Описание проекта
 
-## Development server
+Этот проект представляет собой веб-приложение, которое отображает список репозиториев компании Microsoft с использованием GitHub REST API. Приложение реализовано на Angular 19.1.0.
 
-To start a local development server, run:
+![app_screenshot](https://github.com/SurPrizoV/git-repos/blob/main/public/assets/screenshot.png?raw=true)
+
+## Функциональность
+
+Отображение таблицы с репозиториями Microsoft. 
+Автоматическое наполнение таблицы при загрузке страницы. 
+Постраничный вывод с возможностью изменения размера страницы(10, 50, 100 элементов). 
+
+Столбцы таблицы: 
+
+Наименование репозитория. 
+Используемый язык программирования. 
+Дата/время последнего push. 
+Признак архивности. 
+Ссылка на домашнюю страницу проекта. 
+
+Интерактивность таблицы: 
+
+Выделение строки при наведении курсора. 
+Выделение строки при клике. 
+
+Расположение и оформление: 
+
+Таблица с кнопками расположена по центру страницы. 
+Стилизация страницы для приятного UI/UX. 
+
+Обработка запросов к серверу: 
+
+Блокировка элементов управления во время запроса. 
+Отмена запроса с помощью AbortController. 
+Отображение индикатора загрузки во время выполнения запроса. 
+
+Синхронизация данных между вкладками: 
+
+ Если данные загружены в одной вкладке, они автоматически отобразятся в другой без повторного запроса.
+
+Оффлайн-режим: 
+
+Если интернет-соединение пропало, но страница обновилась, последние загруженные данные сохраняются и отображаются.
+
+Копирование данных: 
+
+По нажатию ALT + C содержимое таблицы копируется в буфер обмена в CSV-подобном формате. 
+
+## Используемые технологии
+
+Angular 19.1.0 
+TypeScript 
+RxJS 
+Angular Material 
+Docker 
+Jasmine/Karma 
+
+## Установка и запуск
+
+Локальный запуск
 
 ```bash
-ng serve
+#Клонировать репозиторий:
+git clone https://github.com/SurPrizoV/git-repos
+cd ./git-repos
+
+#Установить зависимости:
+npm install
+
+#Запустить приложение:
+npm run start
+
+Открыть в браузере: http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Запуск в Docker
 
 ```bash
-ng generate component component-name
+#Собрать Docker-образ:
+docker build -t git-repos .
+
+#Запустить контейнер:
+docker run -d -p 8080:80 git-repos
+
+Открыть в браузере: http://localhost:8080
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Тестирование
+
+Для запуска unit-тестов:
 
 ```bash
-ng generate --help
+npm run test
 ```
 
-## Building
+## Деплой
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Приложение задеплоено и доступно по [[ссылке.](https://git-repos-one.vercel.app)]
